@@ -103,7 +103,7 @@ CurvesDrawer = newClass(PointDrawer, {
 		};
 
 		// construction using Bezier shapes
-		var bezie = function(points) {
+		var bezie = function* (points) {
 			if ( !points )
 				yield null;
 			
