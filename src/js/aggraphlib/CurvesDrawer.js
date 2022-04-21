@@ -17,7 +17,7 @@ CurvesDrawer = newClass(PointDrawer, {
 						
 	__webColor : '#e7d26e',
   
-	constructor : function() {
+	constructor : function* () {
 		var me = this;
 		
 		me.constructor.prototype.constructor.call(this, arguments[0]);
@@ -37,7 +37,7 @@ CurvesDrawer = newClass(PointDrawer, {
 		};
 		
 		// construction method of the Hermite
-		var ermit = function(points) {	
+		var ermit = function* (points) {	
 			if (!points)
 				yield null;
 			else 
@@ -181,7 +181,7 @@ CurvesDrawer = newClass(PointDrawer, {
 			yield null;
 		};		
 		
-		var bspline = function(points) {
+		var bspline = function* (points) {
 			if ( !points || points.length < 4 )
 				yield null;		
 			

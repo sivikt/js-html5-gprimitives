@@ -50,7 +50,7 @@ LineDrawer = newClass(PointDrawer, {
 		apply(me, arguments[0]);
 		
 		// dda draw line algorithm
-		var ddaAlgorithm = function(points) {
+		var ddaAlgorithm = function* (points) {
 			if (!points)
 				return;
 			
@@ -148,7 +148,7 @@ LineDrawer = newClass(PointDrawer, {
 		};
 		
 		// Bresenham's draw line algorithm
-		var bresAlgorithm = function(points) {
+		var bresAlgorithm = function* (points) {
 			if (!points)
 			  return;
 			
@@ -283,7 +283,7 @@ LineDrawer = newClass(PointDrawer, {
 		};
 		
 		// draw line with antialiasing (Wu algorithm)
-		var wuAlgorithm = function(points) {
+		var wuAlgorithm = function* (points) {
 			if (!points)
 			  return;
 			

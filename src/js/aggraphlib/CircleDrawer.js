@@ -22,7 +22,7 @@ CircleDrawer = newClass(PointDrawer, {
 	// algorithm builds 1/4 of the circle so it's so hard. 
 	// алгоритм полностью аналогичен алгоритму построения эллипса,
 	// так как является его частным случаем
-	draw : function(centerPoint, radius) {
+	draw : function* (centerPoint, radius) {
 		var me = this;
 		
 		if (!centerPoint)

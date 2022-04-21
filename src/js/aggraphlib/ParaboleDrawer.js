@@ -39,7 +39,7 @@ ParaboleDrawer = newClass(PointDrawer, {
 		me.currentKind = me.SQR_Y;
 		me.constructor.prototype.constructor.call(this, arguments[0]);
 		
-		var sqr_y = function(vertexPoint, param_p) {
+		var sqr_y = function* (vertexPoint, param_p) {
 			if (!vertexPoint)
 				yield null;
 		  
@@ -134,7 +134,7 @@ ParaboleDrawer = newClass(PointDrawer, {
 		};
 		
 		// этот алгоритм полностью аналогичен предыдущему
-		var sqr_x = function(vertexPoint, param_p) {
+		var sqr_x = function* (vertexPoint, param_p) {
 			if (!vertexPoint)
 				yield null;
 		  

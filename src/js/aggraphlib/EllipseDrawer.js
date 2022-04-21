@@ -35,7 +35,7 @@ EllipseDrawer = newClass(PointDrawer, {
 		apply(me, arguments[0]);
 	},
 				    
-	draw : function(centerPoint, param_a, param_b) {
+	draw : function* (centerPoint, param_a, param_b) {
 		var me = this;
 		
 		if (!centerPoint)
