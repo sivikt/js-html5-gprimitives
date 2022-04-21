@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+	<head>
+		<title>js GEditor</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		
+		<script type="text/javascript;version=1.7" src="js/utils.js"></script>
+		<script type="text/javascript;version=1.7" src="js/sylvester.js"></script>
+
+		<script type="text/javascript;version=1.7" src="js/aggraphlib/PointDrawer.js"></script>
+		<script type="text/javascript;version=1.7" src="js/aggraphlib/LineDrawer.js"></script>
+		<script type="text/javascript;version=1.7" src="js/aggraphlib/EllipseDrawer.js"></script>
+		<script type="text/javascript;version=1.7" src="js/aggraphlib/CircleDrawer.js"></script>
+		<script type="text/javascript;version=1.7" src="js/aggraphlib/ParaboleDrawer.js"></script>
+		<script type="text/javascript;version=1.7" src="js/aggraphlib/CurvesDrawer.js"></script>
+        <script type="text/javascript;version=1.7" src="js/aggraphlib/Transformer3D.js"></script>
+		
+		<script type="text/javascript;version=1.7" src="js/start.js"></script>
+	</head>
+	
+	<body>
+ 		<div id="container" >
+			<div id="header">
+			  <div id="header-info">
+			      <a id="show-about-btn" href="#">about</a>
+				  <div id="about-window">
+					  <div id="about-close-btn">
+					  </div>
+					  <div id="about-content">
+						  <div style="padding: 20px">
+							  It's a good program, written in the conscience!
+							  <br/>
+							  It allows you to draw points and different lines, yes.
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+			</div>
+			
+			<div id="outer">
+	 			<div id="inner">
+					<div id="top" >
+					    <div id="top-btn-container">
+						    <div id="draw-point-btn" class="top-btn horizontal-btn" title="draw points"><div>points</div></div>
+						    <div id="draw-line-btn" class="top-btn horizontal-btn" title="draw lines"><div>lines</div></div>
+							<div id="draw-circle-btn" class="top-btn horizontal-btn" title="draw circles"><div>circles</div></div>
+							<div id="draw-ellipse-btn" class="top-btn horizontal-btn" title="draw ellipses"><div>ellipses</div></div>
+							<div id="draw-parabole-btn" class="top-btn horizontal-btn" title="draw paraboles"><div>prbles</div></div>
+							<div id="draw-curves-btn" class="top-btn horizontal-btn" title="draw curves"><div>curves</div></div>
+                            <div id="draw-transform-btn" style="width: 80px;" class="top-btn horizontal-btn" title="transformations"><div>transform</div></div>
+                            <br/>
+                            <div id="draw-filling-btn" class="top-btn horizontal-btn" title="filling"><div>filling</div></div>
+					    </div>
+					</div>
+					<div id="left">
+						<div id="logging">
+						</div>
+					</div>
+	 				<div id="right">
+					    <div id="right-container">
+							<div id="draw-line-btn-features" class="button-container hidden">
+								<div class="title">algorithms</div>
+								<div id="dda" class="right-btn vertical-btn act-vertical-btn" title="DDA algorithm">
+									<div style="border-right:4px solid #b07856;">DDA</div>
+								</div>
+								<div id="bres" class="right-btn vertical-btn" title="Bresenham's algorithm">
+									<div style="border-right:4px solid #b05678;">BRES</div>
+								</div>
+								<div id="wu" class="right-btn vertical-btn" title="Wu algorithm">
+									<div style="border-right:4px solid #9156b0;">WU</div>
+								</div>
+							</div>
+
+							<div id="draw-circle-btn-features" class="button-container hidden">
+								<div class="title">features</div>
+								<div id="radius-features">
+									<div>r = </div> 
+									<div><input type="text" name="circle-radius-input" id="circle-radius-input" class="right-input" value="2"/></div>
+									<div id="radius-btn" onclick="setRadius();">ok</div>
+								</div>
+							</div>
+
+							<div id="draw-ellipse-btn-features" class="button-container hidden">
+								<div class="title">features</div>
+								<div id="ellipse-params-features">
+									<div>a = </div> 
+									<div><input type="text" name="ellipse-param-a" id="ellipse-param-a" class="right-input" value="2"/></div>
+									<div>b = </div> 
+									<div><input type="text" name="ellipse-param-b" id="ellipse-param-b" class="right-input" value="1"/></div>
+									<div id="ellipse-params-btn" onclick="setEllipseParams();">ok</div>
+								</div>
+							</div>
+
+							<div id="draw-parabole-btn-features" class="button-container hidden">
+								<div class="title">kinds</div>
+								<div id="sqr_y" class="right-btn vertical-btn act-vertical-btn" title="y^2 = 2*p*x">
+									<div style="border-right:4px solid #8979d9;">y^2 = 2*p*x</div>
+								</div>
+								<div id="sqr_x" class="right-btn vertical-btn" title="x^2 = 2*p*y">
+									<div style="border-right:4px solid #c679d9;">x^2 = 2*p*y</div>
+								</div>
+								<div class="title">features</div>
+								<div id="parabole-features">
+									<div>p = </div> 
+									<div><input type="text" name="parabole-param" id="parabole-param" class="right-input" value="2"/></div>
+									<div id="parabole-param-btn" onclick="setParaboleParam();">ok</div>
+								</div>
+							</div>
+
+							<div id="draw-curves-btn-features" class="button-container hidden">
+								<div class="title">methods</div>
+								<div id="ermit" class="right-btn vertical-btn act-vertical-btn" title="Ermit">
+									<div style="border-right:4px solid #14a614;">Ermit</div>
+								</div>
+								<div id="bezie" class="right-btn vertical-btn" title="Bezie">
+									<div style="border-right:4px solid #e17d50;">Bezie</div>
+								</div>
+								<div id="bspline" class="right-btn vertical-btn" title="B-Spline">
+									<div style="border-right:4px solid #c450e1;">B-Spline</div>
+								</div>
+								<div class="title">features</div>
+								<div id="curves-features">
+									<div class="feature-line">
+										<div>R1x = </div> 
+										<div><input type="text" name="r1x-param" id="r1x-param" class="right-input" value="2"/></div>
+										<div>R1y = </div> 
+										<div><input type="text" name="r1y-param" id="r1y-param" class="right-input" value="1"/></div>
+									</div>
+									<div class="feature-line">
+										<div>R2x = </div> 
+										<div><input type="text" name="r2x-param" id="r2x-param" class="right-input" value="2"/></div>
+										<div>R2y = </div> 
+										<div><input type="text" name="r2y-param" id="r2y-param" class="right-input" value="1"/></div>
+									</div>
+									<div class="feature-line">
+										<div>Iter = </div> 
+										<div><input type="text" name="iter-param" id="iter-param" class="right-input" value="100"/></div>
+										<div>Dots = </div> 
+										<div><input type="text" name="dots-param" id="dots-param" class="right-input" value="2"/></div>
+									</div>
+									<div id="curves-params-btn" onclick="setCurvesParams();">ok</div>
+								</div>								
+							</div>
+
+                            <div id="draw-transform-btn-features" class="button-container hidden">
+                                <div class="title">actions</div>
+                                <div id="draw3D" class="vertical-btn" title="draw3D">
+                                    <div style="border-right:4px solid #b07856;" onclick="transform3D.resetPoints(); transform3D.draw3D();">draw3D</div>
+                                </div>
+                            </div>
+
+							<div id="tools-features" class="hidden">
+								<div class="title">tools</div>
+								<div id="step-by-step-box">
+									<div id="on-step-by-step-btn" class="horizontal-btn" title="Enable step-by-step mode">
+										<div id="onoff-text">on sbs</div>
+									</div>
+									<div id="make-step-btn" style="display: none;" class="horizontal-btn" title="click to step">
+										<div>step &gt;</div>
+									</div>
+								</div>
+							</div>
+					    </div>
+	 				</div>	
+					<div id="content">
+						<div id="canvas-container">
+							<canvas id="slave-canvas" width="530" height="480"></canvas>
+							<canvas id="master-canvas" width="530" height="480"></canvas>
+						</div>
+						<div id="current-coord-panel">x = 0 ::: y = 0</div>	
+					</div>
+			 	</div>
+			</div>
+	 		<div id="footer">
+	 			<div id="common-btn-container">
+	 				<div id="clear-btn" class="bottom-btn horizontal-btn common-btn" title="clear canvas" onclick="clearCanvas();"><div>clear</div></div>
+				</div>
+	 		</div>
+		</div>
+	</body>
+</html>

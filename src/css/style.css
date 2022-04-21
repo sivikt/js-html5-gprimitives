@@ -1,0 +1,384 @@
+body {
+	background-color: #313131;
+	font-size: 11px;
+	font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
+	color: #000;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: #564b47;
+}
+
+a:visited {
+	color: #564b47;
+}
+
+a:hover {
+	color: #db7093;
+}
+
+a:active { 
+	color: #564b47;
+}
+
+/* ----------container to center the layout-------- */
+#container {
+	width: 950px;
+	padding: 0;
+	margin: 10px auto 0 auto;
+} 
+
+/* ----------banner for logo-------------- */
+#header {
+	text-align: right;
+	background: none;
+}
+
+#header-info {
+	margin-right: 200px;
+}
+
+#about-window {
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top : 150px;
+	left : 480px;
+	background-color: #564b47;
+	z-index: 10;
+	padding: 12px 12px 10px 12px;
+	filter: alpha(opacity=80); 
+	-moz-opacity: 0.8; 
+	opacity: 0.8; 
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow: hidden;
+	display: none;
+}
+
+#about-window div#about-content {
+	background-color: #c0c0ff;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	border-radius: 0;
+}
+
+#about-window div#about-close-btn {
+	position: relative;
+	background: url('close-btn-psv.gif') no-repeat;
+	float: right;
+	width: 7px;
+	height: 7px;
+	margin: -8px -8px 0 0;
+}
+
+#about-window div#about-close-btn:hover {
+	background: url('close-btn-act.gif') no-repeat;
+	cursor: pointer;
+}
+
+/* ----------outer and inner----------------- */
+
+#outer { 
+	margin: 0 200px; 
+} 
+
+#inner {
+	width: 100%; 
+} /* The ie/pc pecularity */ 
+
+/* --------------left and right navi------------- */
+#top {
+	text-align: right;
+	background: none;
+}
+
+#left {
+	width: 300px; 
+	float: left; 
+	position: relative; 
+	margin-left: -300px; 
+	margin-right: 1px;
+}
+
+#logging {
+	margin-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #564B47;
+	height: 470px;
+	overflow: hidden;
+}
+
+#logging table {
+	color : #A97000;
+	width : 100%;
+}
+
+#logging table td {
+	border: 1px solid #564B47;
+}
+ 
+#logging table tr {
+	border: 1px solid #564B47;
+}
+
+#logging table th {
+	border: 1px solid #564B47;
+	background-color: #564B47;
+}
+
+#right {
+    width: 200px; 
+    float: right; 
+    position: relative; 
+    margin-right: -200px; 
+}
+
+#right-container {
+	margin-left: 5px;
+}
+
+#right-container div.hidden {
+	display: none;
+	margin-bottom: 20px;
+}
+
+#right div.title {
+	color: #f4f630;
+	padding: 0 30px 10px;
+	font-weight: bold;
+}
+
+.right-input {
+	border: 1px solid #939393;
+	color: #939393;
+	padding: 0 3px;
+	width: 23px;
+}
+
+/* -----------------content--------------------- */ 
+#content { 
+	position: relative; 
+	background-color: #c0c0ff;	
+	overflow: hidden;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#current-coord-panel {
+	margin: 0 0 5px 10px;
+	color: #313131;
+}
+
+#canvas-container {
+	width: 530px;
+	height: 480px;
+	margin: 10px 10px 5px 10px;
+}
+
+#master-canvas {
+	background-color: #D7D7FF;
+	height: 460px;
+	margin-left: 20px;
+	margin-top: -460px;
+	width: 510px;
+	z-index: 10;
+}
+
+#slave-canvas {
+	width: 530px;
+	height: 480px;
+	background-color: #D7D7FF;
+}
+
+/*  ----------------footer---------------------- */ 
+#footer {
+	clear: left;
+	padding: 0;
+	margin: 0;
+	text-align: right; 
+	background: none;
+} 
+
+/*  ----------------btns---------------------- */ 
+#top-btn-container {
+	margin: 0 0 5px -20px;
+	overflow: hidden;
+}
+
+.horizontal-btn {
+	margin-right: 5px;
+	background-color: #c0c0ff;	
+	width: 70px;
+	height: 25px;
+	float: left;
+	font-weight: normal;
+	text-align: center;
+	color: #939393;
+    margin-top: 5px;
+}
+
+.horizontal-btn div {
+	margin: 5px;
+	height: 15px;
+	background-color: #ddd;
+}
+
+.horizontal-btn:hover {
+	cursor: pointer;
+	color: #7454f0;
+}
+
+.act-horizontal-btn {
+	color: #7454f0;
+	font-weight: bold;
+}
+
+.vertical-btn {
+	margin: 0 5px 5px 0;
+	background-color: #c0c0ff;	
+	width: 70px;
+	height: 25px;
+	overflow: hidden;
+	font-weight: normal;
+	text-align: center;
+	color: #939393;
+}
+
+.vertical-btn div {
+	margin: 5px;	
+	height: 15px;
+	background-color: #ddd;
+}
+
+.vertical-btn:hover {
+	cursor: pointer;
+	color: #7454f0;
+}
+
+.act-vertical-btn {
+	color: #7454f0;
+	font-weight: bold;
+}
+
+#common-btn-container {
+	margin: 5px 180px 0 180px;
+	overflow: hidden;
+}
+
+.common-btn {
+	font-weight: bold; 
+	color: #939393;
+}
+
+.common-btn:hover {
+	color: #961e9a;
+	font-weight: bold;
+	margin: 2px 5px 0 0;
+}
+
+#radius-features {
+	color: #939393;
+	font-weight: bold;
+}
+
+#radius-features div {
+	display: inline;
+}
+
+#radius-features div#radius-btn {
+	background-color: #C0C0FF;
+	margin-left: 5px;
+	padding: 1px 2px;
+	text-align: center;
+	border: 1px solid #939393;
+}
+
+#radius-features div#radius-btn:hover {
+	color: #7454F0;
+	cursor: pointer;
+}
+
+#ellipse-params-features {
+	color: #939393;
+	font-weight: bold;
+}
+
+#ellipse-params-features div {
+	display: inline;
+}
+
+#ellipse-params-features div#ellipse-params-btn {
+	background-color: #C0C0FF;
+	margin-left: 5px;
+	padding: 1px 2px;
+	text-align: center;
+	border: 1px solid #939393;
+}
+
+#ellipse-params-features div#ellipse-params-btn:hover {
+	color: #7454F0;
+	cursor: pointer;
+}
+
+#parabole-features {
+	color: #939393;
+	font-weight: bold;
+}
+
+#parabole-features div {
+	display: inline;
+}
+
+#parabole-features div#parabole-param-btn {
+	background-color: #C0C0FF;
+	margin-left: 5px;
+	padding: 1px 2px;
+	text-align: center;
+	border: 1px solid #939393;
+}
+
+#parabole-features div#parabole-param-btn:hover {
+	color: #7454F0;
+	cursor: pointer;
+}
+
+#draw-parabole-btn-features div.right-btn {
+	width: 110px;
+}
+
+#curves-features {
+	color: #939393;
+	font-weight: bold;
+}
+
+#curves-features div {
+	display: block;
+}
+
+#curves-features div.feature-line div {
+	display: inline;
+	margin-bottom: 5px; 
+}
+
+.feature-line {
+	margin-bottom: 5px;
+}
+
+#curves-features div#curves-params-btn {
+	background-color: #C0C0FF;
+	margin-left: 5px;
+	padding: 1px 2px;
+	text-align: center;
+	border: 1px solid #939393;
+	margin-top: 15px;
+}
+
+#curves-features div#curves-params-btn:hover {
+	color: #7454F0;
+	cursor: pointer;
+}
