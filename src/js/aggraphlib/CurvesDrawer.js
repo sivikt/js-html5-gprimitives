@@ -17,7 +17,7 @@ CurvesDrawer = newClass(PointDrawer, {
 						
 	__webColor : '#e7d26e',
   
-	constructor : function* () {
+	constructor : function() {
 		var me = this;
 		
 		me.constructor.prototype.constructor.call(this, arguments[0]);
